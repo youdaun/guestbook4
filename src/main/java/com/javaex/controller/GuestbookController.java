@@ -37,17 +37,17 @@ public class GuestbookController {
 		
 		return "deleteForm";
 	}
-	
+
 	@RequestMapping(value="/delete", method= {RequestMethod.GET, RequestMethod.POST})
 	public String delete(@RequestParam("password") String pass,
 						 @RequestParam("no") int no) {
 		System.out.println("gbc > delete");
-		
+
 		gDao.guestDelete(no, pass);
 		
 		return "redirect:/addList";
 	}
-	
+
 	@RequestMapping(value="/add", method= {RequestMethod.GET, RequestMethod.POST})
 	public String add(@ModelAttribute GuestbookVo gvo) {
 		System.out.println("gbc > add");
@@ -56,6 +56,6 @@ public class GuestbookController {
 		
 		return "redirect:/addList";
 	}
-	
+
 	
 }
